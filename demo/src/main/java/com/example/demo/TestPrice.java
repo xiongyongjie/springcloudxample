@@ -53,9 +53,7 @@ public class TestPrice {
 
 //        System.out.println(sum(ints));
         //Stream.of( new Optional(ints.get(2)).orElse(new Integer(12)));
-        Optional<Integer> a = Optional.of(null);
-        Optional<String> b = Optional.of("");
-        optest(a,b);
+        System.out.println(new BigDecimal("135000").compareTo(new BigDecimal(135000)));
 
     }
 
@@ -92,6 +90,7 @@ public class TestPrice {
     public static void optest(Optional<Integer> p1,Optional<String> p2){
         System.out.println(p1.isPresent());
         System.out.println(p2.isPresent());
+
     }
 
 }

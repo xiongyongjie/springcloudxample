@@ -7,6 +7,7 @@ import ann.util.FieldsUtil;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -20,13 +21,13 @@ public class RedisEntityCRUD<RO extends RedisRo>  extends RedisEntityCrudImpl  {
 
     private String keyPrefix;
 
-    private Map<String,Object> invalidMaps;
+    private Map<String,Object> invalidMaps = new HashMap<>();
 
     private RO instance;
 
     public void save(RO ro){
         //获取子类实例
-        Map<String,Object> map = FieldsUtil.getBeanFieldsValues(ro);
+        Map<String,Object> map = FieldsUtil.getBeanFieldsValues(ro,invalidMaps);
         System.out.println(map);
         super.save(keyPrefix,"null");
     }

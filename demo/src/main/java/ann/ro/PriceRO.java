@@ -1,6 +1,7 @@
 package ann.ro;
 
 import ann.RedisRo;
+import ann.keyann.Invalid;
 import ann.keyann.Key;
 import lombok.Data;
 
@@ -14,4 +15,6 @@ import lombok.Data;
 public class PriceRO extends RedisRo {
     private String pname;
     private Double price;
+    @Invalid
+    private String address;
 }
